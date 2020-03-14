@@ -1,0 +1,9 @@
+DirectoryIndex /main.php
+ErrorDocument 500 /
+ErrorDocument 404 /404.php
+RewriteEngine On
+  RewriteBase /
+  Redirect /Main /main.php
+  Redirect /Portfolio /portfolio.php
+  Redirect /Price /price.php
+  Redirect /Contacts /contacts.php

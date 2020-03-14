@@ -1,0 +1,45 @@
+.preloader
+{
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  display: grid;
+  h1
+  {
+    align-self: center;
+    justify-self: center;
+    -webkit-animation:go 1s infinite linear;
+    animation:go 1s infinite linear;
+  }
+  @-webkit-keyframes go
+  {
+   from
+   {
+     color: gray;
+   }
+   to
+   {
+     color: black;
+   }
+  }
+  @keyframes go
+  {
+   from
+   {
+     color: gray;
+   }
+   to
+   {
+     color: black;
+   }
+  }
+}
+.preloader.done
+{
+  transition: .5s;
+  opacity: 0;
+  visibility: hidden;
+}

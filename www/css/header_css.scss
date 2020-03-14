@@ -1,0 +1,145 @@
+$col_main_0:#000000;
+$col_main_1:#999999;
+$col_back_0:#ffffff;
+
+$transition_time_0:.3s;
+
+@mixin transition_0
+{
+  -webkit-transition: $transition_time_0 ease;
+  -moz-transition: $transition_time_0 ease;
+  -o-transition: $transition_time_0$transition_time_0 ease;
+}
+
+body
+{
+  [tupe='checkbox']
+  {
+    display: none;
+  }
+}
+input,
+label
+{
+  display: none;
+}
+header
+{
+  box-shadow: 0 0 5vh;
+  background-color: $col_back_0;
+  width: 100vw;
+  text-align: center;
+
+  .header_img_logo
+  {
+    height: 10vh;
+    padding-top: 1vh;
+  }
+  .header_div_background_dark
+  {
+    display: none;
+  }
+  nav
+  {
+    background-color: $col_back_0;
+    width: 100%;
+    ul
+    {
+      display: grid;
+      grid-template-columns: 1fr repeat(4, 130px) 1fr;
+      list-style: none;
+    	margin:0;
+      padding: 0;
+      li
+      {
+        padding: 2vh 0;
+        a
+        {
+          text-decoration: none;
+          color: $col_main_0;
+          @include transition_0;
+        }
+        a:hover
+        {
+          color: $col_main_1;
+          cursor: pointer;
+        }
+      }
+      li:first-child
+      {
+        grid-column: 2;
+      }
+    }
+  }
+}
+
+//MEDIA
+
+@media (max-width:800px)
+{
+  label
+  {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    img
+    {
+      width: 15vw;
+    }
+  }
+  .header_nav_menu_input:checked ~ header
+  {
+    display: grid;
+  }
+  header
+  {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: 6fr 4fr;
+    background-color: transparent;
+    z-index: 10;
+    .header_img_logo
+    {
+      display: none;
+    }
+    .header_div_background_dark
+    {
+      display: block;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, .5);
+    }
+    nav
+    {
+      background-color: $col_back_0;
+      padding-top: 15vw;
+      ul
+      {
+        justify-self: center;
+        grid-template-columns: 1fr;
+        li
+        {
+          padding: 2vh 0;
+          a
+          {
+
+          }
+          a:hover
+          {
+
+          }
+        }
+        li:first-child
+        {
+          grid-column: 1;
+        }
+      }
+    }
+  }
+}

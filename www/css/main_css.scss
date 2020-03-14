@@ -1,0 +1,131 @@
+$col_main_0:#000000;
+$col_main_1:#999999;
+$col_back_0:#ffffff;
+
+$transition_time_0:.3s;
+$transition_shadow_0:5s;
+
+@mixin transition_0
+{
+  -webkit-transition: $transition_time_0 ease;
+  -moz-transition: $transition_time_0 ease;
+  -o-transition: $transition_time_0$transition_time_0 ease;
+}
+
+@import "fonts_css.css";
+@import "preloader_css.css";
+
+body
+{
+	font-family:'Gilroy Ultra Light','Impact';
+	font-weight: 900;
+	max-width:100vw;
+	margin:0;
+  padding: 0;
+  overflow-x: hidden;
+  main
+  {
+    .main_section_background
+    {
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      z-index: -5;
+      background-image: url("/img/main/background.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+    .main_section_0
+    {
+      box-shadow: 0 0 10vh;
+      width: 100vw;
+      height: auto;
+      background-color: $col_back_0;
+      margin-top: 70vh;
+      display: grid;
+      grid-template-columns: 10fr 6fr 4fr;
+      &-img
+      {
+        justify-self: end;
+        width: 60%;
+        margin: 10%;
+      }
+			img:hover
+			{
+				transition: $transition_shadow_0;
+				box-shadow: 0 0 10vw black;
+			}
+      &-div_0
+      {
+        margin-top: 10%;
+        h1
+        {
+
+        }
+        h3
+        {
+
+        }
+        p
+        {
+          font-size: 16px;
+          text-align: justify;
+          a
+          {
+            color: $col_main_0;
+		        @include transition_0;
+          }
+          a:hover
+          {
+            color: $col_main_1;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+//MEDIA
+
+@media (max-width:800px)
+{
+  body
+  {
+    main
+    {
+      .main_section_background
+      {
+      display: none;
+      }
+      .main_section_0
+      {
+        margin: 0;
+        grid-template-columns: 1fr;
+        &-img
+        {
+          justify-self: end;
+          width: 80%;
+          margin: 10%;
+        }
+        &-div_0
+        {
+          margin: 0 10%;
+          h1
+          {
+            text-align: center;
+          }
+          h3
+          {
+
+          }
+          p
+          {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
