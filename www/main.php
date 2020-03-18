@@ -37,8 +37,8 @@
 </html>
 <script>
 window.history.pushState({},"Hide",'Main');
-    if(typeof window.history.replaceState == 'function')
+  if(typeof window.history.replaceState == 'function')
 	{
-        window.history.pushState({},"Hide",'Main');
-    }
+    window.history.pushState({},"Hide",'Main');
+  }
 </script>
